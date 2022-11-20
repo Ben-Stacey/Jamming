@@ -9,7 +9,7 @@ class Track extends React.Component{
     }
 
     renderAction(){
-        if(){
+        if(this.props.isRemoval){
             <button className="Track-action" onClick={this.removeTrack}>-</button>
         }else{
             <button className="Track-action" onClick={this.addTrack}>+</button>
@@ -28,10 +28,10 @@ class Track extends React.Component{
         return(
             <div className="Track">
                 <div className="Track-information">
-                <h3></h3>
-                    <p></p>
+                <h3>{this.props.tracks.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
-                    <button className="Track-action"></button>
+                    {this.renderAction()}
             </div>
         )
     }
